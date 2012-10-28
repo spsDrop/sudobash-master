@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1 Cofigure AWS Settings
+    form(action="/config",method="POST")
+        ul
+            each val, name in config
+                li
+                    label(for=name)= name
+                    input(name=name,id=name,value=val)
+            li
+                input(type="submit",value="Save Configs");
