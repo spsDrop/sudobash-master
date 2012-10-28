@@ -9,3 +9,6 @@ block content
                 h3 Resrvation
                 p= item.instancesSet.item.instanceId
                 p= item.instancesSet.item.instanceType
+                ul
+                    each tag in item.instancesSet.item.tagSet.item
+                        li #{tag.key}: #{tag.value}

@@ -8,11 +8,7 @@ exports.ViewRouter = function ViewRouter(awsController){
 
     function index(req, res){
         if(awsController.status.initialized){
-            awsController.describeTags(function(tags){
-                console.log(JSON.stringify(tags));
-            });
-            
-            awsController.describeInstances(function(data){
+            awsController.describeTags(function(data){
                 res.render('index', { title: 'Express', items:data.reservationSet.item });
             });
         }else{

@@ -9,7 +9,13 @@ exports.AWSController  = function AWSController(Models){
         };
     
     function initializeClient(accessKeyID, secretAccessKey){
-        ec2 = aws.createEC2Client(accessKeyID, secretAccessKey);
+        ec2 = aws.createEC2Client(
+            accessKeyID,
+            secretAccessKey,
+            {
+                version:"2012-08-15"
+            }
+        );
         status.initialized = true;
     }
 
